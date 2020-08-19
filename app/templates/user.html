@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <table>
+        <tr>
+            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
+            <td>
+                <h1>User: {{ user.username }}</h1>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <p>Add details about quizzes here.</p>
+{% endblock %}

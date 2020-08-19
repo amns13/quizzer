@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Upload Quiz</h1>
+    <div class="row">
+        <div class="col-md-4">
+        <form method="POST" enctype="multipart/form-data">
+             {{ form.hidden_tag() }}
+         <p>
+             {{ form.quizjson.label }}<br>
+             {{ form.quizjson() }}<br>
+             {% for error in form.quizjson.errors %}
+                 <span style="color: red;">[{{ error }}]</span>
+             {% endfor %}
+         </p>
+         <p>{{ form.submit() }}</p>
+        </form>               
+        </div>
+    </div>
+{% endblock %}
